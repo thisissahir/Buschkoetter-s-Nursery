@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1600" viewBox="0 0 240 240" role="img" aria-label="Buschkoetter&#39;s Nursery seal">
+  <circle cx="120" cy="120" r="116" fill="#235337"></circle>
+  <circle cx="120" cy="120" r="104" fill="none" stroke="#D7E4C6" stroke-width="1.5" opacity=".55"></circle>
+  <circle cx="120" cy="120" r="99" fill="none" stroke="#C99A4A" stroke-width="2.5"></circle>
+  <g fill="#EDF3E3">
+    <ellipse cx="120" cy="86" rx="11" ry="23"></ellipse>
+    <ellipse cx="120" cy="86" rx="11" ry="23" transform="rotate(45 120 112)"></ellipse>
+    <ellipse cx="120" cy="86" rx="11" ry="23" transform="rotate(90 120 112)"></ellipse>
+    <ellipse cx="120" cy="86" rx="11" ry="23" transform="rotate(135 120 112)"></ellipse>
+    <ellipse cx="120" cy="86" rx="11" ry="23" transform="rotate(180 120 112)"></ellipse>
+    <ellipse cx="120" cy="86" rx="11" ry="23" transform="rotate(225 120 112)"></ellipse>
+    <ellipse cx="120" cy="86" rx="11" ry="23" transform="rotate(270 120 112)"></ellipse>
+    <ellipse cx="120" cy="86" rx="11" ry="23" transform="rotate(315 120 112)"></ellipse>
+  </g>
+  <circle cx="120" cy="112" r="16" fill="#C99A4A"></circle>
+  <circle cx="120" cy="112" r="9" fill="#7E5616"></circle>
+  <circle cx="120" cy="112" r="3.5" fill="#C99A4A"></circle>
+  <defs>
+    <path id="x-top" d="M40 120 A 80 80 0 0 1 200 120"></path>
+    <path id="x-bot" d="M36 120 A 84 84 0 0 0 204 120"></path>
+  </defs>
+  <text fill="#F4EFE3" font-family="Archivo, &#39;Helvetica Neue&#39;, Arial, sans-serif" font-weight="800" font-size="20.5" letter-spacing="1.5">
+    <textPath href="#x-top" startOffset="50%" text-anchor="middle">BUSCHKOETTER&#39;S</textPath>
+  </text>
+  <text fill="#F4EFE3" font-family="&#39;JetBrains Mono&#39;, &#39;Courier New&#39;, monospace" font-weight="700" font-size="13" letter-spacing="3.5">
+    <textPath href="#x-bot" startOffset="50%" text-anchor="middle">EST · 1978</textPath>
+  </text>
+  <circle cx="44" cy="120" r="2.6" fill="#C99A4A"></circle>
+  <circle cx="196" cy="120" r="2.6" fill="#C99A4A"></circle>
+</svg>

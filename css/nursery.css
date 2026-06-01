@@ -1,0 +1,144 @@
+/* ============================================================================
+   Buschkoetter's Nursery — site-specific styles. Layers on top of kit.css.
+   Ported from the design handoff.
+   ============================================================================ */
+
+/* ---- logo lockup ----------------------------------------------------------*/
+.nlogo{display:inline-flex;align-items:center;gap:12px;}
+.nlogo .mk{width:46px;height:46px;flex:none;transition:width var(--dur-base),height var(--dur-base);}
+.hdr.scrolled .nlogo .mk{width:40px;height:40px;}
+.nlogo-wm{display:flex;flex-direction:column;line-height:1;}
+.nlogo-b{font-family:var(--font-display);font-weight:900;letter-spacing:-.03em;
+  font-size:21px;color:var(--green-700);transition:font-size var(--dur-base);}
+.nlogo.rev .nlogo-b{color:var(--bone-50);}
+.nlogo-s{font-family:var(--font-mono);font-weight:700;font-size:9.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent-700);margin-top:5px;}
+.nlogo.rev .nlogo-s{color:var(--accent-300);}
+.hdr.scrolled .nlogo-b{font-size:19px;}
+
+/* ---- top promo / season bar ----------------------------------------------*/
+.seasonbar{background:var(--green-800);color:var(--bone-100);font-size:14px;}
+.seasonbar .in{max-width:var(--maxw);margin:0 auto;padding:9px var(--gutter);
+  display:flex;align-items:center;justify-content:center;gap:10px;text-align:center;
+  font-weight:500;letter-spacing:.01em;}
+.seasonbar .in b{font-weight:700;}
+.seasonbar .leaf{color:var(--green-200);}
+
+/* ---- hero -----------------------------------------------------------------*/
+.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.hero-media .grain{z-index:1;}
+.hero-media .hero-badge{z-index:2;}
+
+/* ---- photo category cards -------------------------------------------------*/
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px;}
+.catcard{position:relative;display:flex;flex-direction:column;background:var(--surface);
+  border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);
+  transition:transform var(--dur-base) var(--ease-out),box-shadow var(--dur-base);text-decoration:none;}
+.catcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+.catcard .ph{position:relative;aspect-ratio:5/4;overflow:hidden;background:var(--green-700);}
+.catcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform var(--dur-slow) var(--ease-out);}
+.catcard:hover .ph img{transform:scale(1.05);}
+.catcard .body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1;}
+.catcard h3{font-family:var(--font-display);font-size:20px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px;color:var(--fg);}
+.catcard p{font-size:14.5px;color:var(--fg-2);line-height:1.45;margin:0;}
+.catcard .go{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-family:var(--font-mono);
+  font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);}
+.catcard .go svg{width:14px;height:14px;}
+
+/* ---- gallery real photos --------------------------------------------------*/
+.gal{background:var(--green-900);}
+.gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.gal::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to top,rgba(15,32,20,.55),transparent 45%);}
+.gal .tag{z-index:3;}
+.gal .cap{z-index:3;font-weight:700;color:var(--bone-50);font-size:15px;
+  position:absolute;left:16px;right:16px;bottom:14px;line-height:1.3;
+  text-shadow:0 1px 6px rgba(15,32,20,.7);}
+
+/* ---- services band (3-up) -------------------------------------------------*/
+.svc-grid-3{grid-template-columns:repeat(3,1fr) !important;}
+.svc{position:relative;display:flex;flex-direction:column;}
+.svc .svc-tag{position:absolute;top:16px;right:16px;font-family:var(--font-mono);
+  font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent-700);background:var(--accent-50);padding:4px 9px;border-radius:var(--r-pill);}
+.svc .price{margin-top:auto;padding-top:6px;}
+
+/* ---- story ----------------------------------------------------------------*/
+.story{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center;background:transparent;}
+.story .seal-wrap{display:flex;justify-content:center;}
+.story .lead{font-size:19px;color:var(--fg-2);line-height:1.55;font-weight:500;}
+.story p + p{margin-top:16px;}
+.story .sig{font-family:var(--font-mono);font-weight:700;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--accent-700);margin-top:22px;}
+.story-photo{position:relative;border-radius:var(--r-2xl);overflow:hidden;box-shadow:var(--shadow-lg);
+  aspect-ratio:4/5;background:var(--green-700);}
+.story-photo img{width:100%;height:100%;object-fit:cover;}
+.story-photo .seal-badge{
+  position:absolute;right:-14px;bottom:-14px;width:128px;height:128px;
+  background:var(--bone-50);border-radius:50%;display:grid;place-items:center;
+  box-shadow:0 14px 32px rgba(15,32,20,.28),inset 0 0 0 2px rgba(201,154,74,.4);
+  padding:8px;
+}
+.story-photo .seal-badge svg{width:100%;height:100%;display:block;}
+
+/* ---- visit / contact band -------------------------------------------------*/
+.visit{background:var(--green-700);color:var(--bone-100);}
+.visit-grid{display:grid;grid-template-columns:1fr 1.02fr;gap:56px;align-items:stretch;
+  padding-block:var(--section-y);}
+.visit .sec-eyebrow{color:var(--accent-300);}
+.visit h2{font-family:var(--font-display);font-size:clamp(30px,3.6vw,44px);font-weight:800;
+  letter-spacing:-.025em;line-height:1.05;margin:0;color:var(--bone-50);text-wrap:balance;}
+.visit .p{font-size:19px;color:var(--fg-on-dark-2);margin:16px 0 0;line-height:1.5;font-weight:500;}
+.visit-actions{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap;}
+
+.infocard{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.info{background:rgba(244,239,227,.07);border:1px solid rgba(244,239,227,.14);
+  border-radius:var(--r-lg);padding:18px 20px;}
+.info .lab{display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-weight:700;
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-300);margin-bottom:10px;}
+.info .lab svg{width:15px;height:15px;}
+.info .val{font-size:16px;font-weight:600;color:var(--bone-50);line-height:1.5;}
+.info .val a{color:var(--bone-50);}
+.info .val a:hover{color:#fff;}
+
+/* hours table */
+.hours{display:flex;flex-direction:column;gap:7px;}
+.hours .row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  font-size:15px;color:var(--fg-on-dark-2);}
+.hours .row b{font-weight:600;color:var(--bone-50);}
+.hours .row.today{color:var(--bone-50);}
+.hours .row .day{display:flex;align-items:center;gap:8px;}
+.hours .row.today .dot{width:8px;height:8px;border-radius:99px;background:var(--green-200);
+  box-shadow:0 0 0 3px rgba(169,196,140,.25);}
+.hours .row.closed b{color:var(--fg-on-dark-2);font-weight:500;}
+
+/* visit side: photo + real map embed stacked */
+.visit-side{display:flex;flex-direction:column;gap:14px;height:100%;}
+.visit-photo{position:relative;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-lg);
+  flex:1;min-height:240px;}
+.visit-photo img{width:100%;height:100%;object-fit:cover;}
+.visit-map{position:relative;border-radius:var(--r-xl);overflow:hidden;flex:1;min-height:280px;
+  border:1px solid rgba(244,239,227,.16);box-shadow:var(--shadow-lg);background:var(--green-900);}
+.visit-map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:saturate(1.05);}
+.visit-map .hwy{position:absolute;left:14px;bottom:14px;z-index:2;font-family:var(--font-mono);
+  font-weight:700;font-size:12px;letter-spacing:.08em;color:var(--bone-50);
+  background:rgba(15,32,20,.62);backdrop-filter:blur(5px);padding:6px 11px;border-radius:var(--r-pill);
+  pointer-events:none;}
+
+/* footer hours inline */
+.footer .fhours{font-size:15px;line-height:1.7;}
+.footer .fhours b{color:var(--bone-100);font-weight:600;}
+
+@media (max-width:900px){
+  .cat-grid{grid-template-columns:1fr 1fr;}
+  .visit-grid{grid-template-columns:1fr;gap:30px;}
+  .visit-map{min-height:300px;}
+  .story{grid-template-columns:1fr;gap:28px;}
+  .story .seal-wrap{order:-1;}
+  .infocard{grid-template-columns:1fr;}
+}
+@media (max-width:900px){.svc-grid-3{grid-template-columns:1fr 1fr !important;}}
+@media (max-width:560px){
+  .cat-grid{grid-template-columns:1fr;}
+  .svc-grid-3{grid-template-columns:1fr !important;}
+}

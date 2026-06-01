@@ -1,0 +1,209 @@
+/* ============================================================================
+   Buschkoetter's Nursery — colors_and_type.css
+   Design tokens — the single source of truth for color + type.
+   Ported verbatim from the design handoff. Production accent is "Bark"
+   (the handoff's `tree` theme); the other theme presets and the in-design
+   tweak chrome have been stripped per the handoff notes.
+   By A Light in the Sky.
+   ============================================================================ */
+
+:root {
+  /* ===== COLOR PRIMITIVES ================================================= */
+
+  /* Bone — warm paper neutrals (surfaces, backgrounds) */
+  --bone-50:  #FBF9F3;
+  --bone-100: #F4EFE3;   /* primary page background */
+  --bone-200: #EAE3D2;   /* alt surface / section band */
+  --bone-300: #DED5BE;   /* hairlines on bone, disabled fills */
+  --bone-400: #C7BB9D;
+
+  /* Ink — green-black neutrals (text, deep surfaces) */
+  --ink-900: #0F2014;    /* deepest, near-black green */
+  --ink-800: #15281C;    /* primary text */
+  --ink-700: #233528;
+  --ink-600: #3C4F43;    /* secondary text */
+  --ink-500: #5B6B5F;    /* muted text, captions */
+  --ink-400: #8A968C;    /* placeholder, disabled text */
+
+  /* Brand green — the through-line of the site */
+  --green-900: #112B1B;
+  --green-800: #16301F;
+  --green-700: #1B4129;
+  --green-600: #235337;  /* PRIMARY brand green */
+  --green-500: #2E6A45;
+  --green-400: #4C8A60;
+  --green-300: #7BA05B;  /* sage — soft secondary green */
+  --green-200: #A9C48C;
+  --green-100: #D7E4C6;
+  --green-50:  #EDF3E3;
+
+  /* Functional / status */
+  --success: #2E6A45;
+  --warning: #C98A1E;
+  --danger:  #B23A2E;
+  --info:    #3E6E8E;
+  --star:    #E9B949;    /* review stars */
+
+  /* ===== ACCENT — "Bark" amber (production accent for this site) ========= */
+  --accent-50:  #F7EEDD;   /* eyebrow chip background */
+  --accent-100: #ECD9B3;
+  --accent-300: #C99A4A;   /* accent text on dark */
+  --accent-600: #9A6B1E;   /* CTAs, "Plan Your Visit" */
+  --accent-700: #7E5616;   /* hover state, eyebrow text */
+  --accent-800: #634311;   /* seal center */
+  --accent-contrast: #FFFFFF;  /* text on accent */
+
+  /* ===== SEMANTIC ROLES =================================================== */
+  --bg:            var(--bone-100);
+  --bg-alt:        var(--bone-200);
+  --surface:       var(--bone-50);
+  --surface-ink:   var(--green-600);
+  --fg:            var(--ink-800);
+  --fg-2:          var(--ink-600);
+  --fg-muted:      var(--ink-500);
+  --fg-on-dark:    var(--bone-100);
+  --fg-on-dark-2:  rgba(244, 239, 227, 0.74);
+  --border:        rgba(21, 40, 28, 0.12);
+  --border-strong: rgba(21, 40, 28, 0.22);
+  --brand:         var(--green-600);
+  --accent:        var(--accent-600);
+  --ring:          color-mix(in srgb, var(--accent-600) 45%, transparent);
+
+  /* ===== TYPE SCALE ======================================================= */
+  --font-display: 'Archivo', system-ui, -apple-system, sans-serif;
+  --font-body:    'Archivo', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+
+  /* Token ramp is deliberately flat; the real visual hierarchy is driven by
+     the component CSS in kit.css / nursery.css, which override sizes per
+     element. Do not "improve" these. */
+  --fs-display:   1.5rem;      /* 24 */
+  --fs-h1:        1.5rem;      /* 24 */
+  --fs-h2:        1.375rem;    /* 22 */
+  --fs-h3:        1.25rem;     /* 20 */
+  --fs-lead:      1.25rem;     /* 20 */
+  --fs-body:      1.125rem;    /* 18 */
+  --fs-sm:        1rem;        /* 16 */
+  --fs-eyebrow:   0.875rem;    /* 14 */
+
+  --lh-tight:   0.98;
+  --lh-snug:    1.12;
+  --lh-normal:  1.5;
+  --lh-relaxed: 1.6;
+
+  --tracking-display: -0.03em;
+  --tracking-tight:   -0.02em;
+  --tracking-normal:  -0.01em;
+  --tracking-eyebrow:  0.12em;
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semi:    600;
+  --fw-bold:    700;
+  --fw-x:       800;
+  --fw-black:   900;
+
+  /* ===== SPACING (8px base, plus 4px half-steps) ========================= */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --section-y: clamp(56px, 8vw, 112px);
+  --gutter:    clamp(20px, 5vw, 64px);
+  --maxw:      1240px;
+
+  /* ===== RADII =========================================================== */
+  --r-xs:  6px;
+  --r-sm:  9px;
+  --r-md:  12px;
+  --r-lg:  16px;
+  --r-xl:  20px;
+  --r-2xl: 28px;
+  --r-pill: 999px;
+
+  /* ===== SHADOWS / ELEVATION ============================================= */
+  --shadow-xs: 0 1px 2px rgba(15, 32, 20, 0.06);
+  --shadow-sm: 0 2px 6px rgba(15, 32, 20, 0.08);
+  --shadow-md: 0 10px 24px -12px rgba(15, 32, 20, 0.28);
+  --shadow-lg: 0 24px 50px -24px rgba(15, 32, 20, 0.42);
+  --shadow-xl: 0 36px 70px -30px rgba(15, 32, 20, 0.50);
+  --shadow-accent: 0 12px 26px -10px color-mix(in srgb, var(--accent-600) 55%, transparent);
+
+  /* ===== MOTION ========================================================== */
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft:  cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:   140ms;
+  --dur-base:   240ms;
+  --dur-slow:   600ms;
+}
+
+/* ============================================================================
+   SEMANTIC ELEMENT STYLES — scoped under .lse on the site root.
+   ============================================================================ */
+.lse {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.lse h1, .lse .h1 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1); font-weight: var(--fw-x);
+  line-height: var(--lh-snug); letter-spacing: var(--tracking-display);
+  color: var(--fg); margin: 0;
+}
+.lse .display {
+  font-family: var(--font-display);
+  font-size: var(--fs-display); font-weight: var(--fw-x);
+  line-height: var(--lh-tight); letter-spacing: var(--tracking-display);
+  color: var(--fg); margin: 0; text-wrap: balance;
+}
+.lse h2, .lse .h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2); font-weight: var(--fw-x);
+  line-height: var(--lh-snug); letter-spacing: var(--tracking-tight);
+  color: var(--fg); margin: 0;
+}
+.lse h3, .lse .h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3); font-weight: var(--fw-bold);
+  line-height: 1.2; letter-spacing: var(--tracking-tight);
+  color: var(--fg); margin: 0;
+}
+.lse .lead {
+  font-size: var(--fs-lead); line-height: var(--lh-normal);
+  color: var(--fg-2); font-weight: var(--fw-medium);
+}
+.lse p { margin: 0; color: var(--fg-2); }
+.lse small, .lse .text-sm { font-size: var(--fs-sm); }
+.lse .eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow); font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-eyebrow); text-transform: uppercase;
+  color: var(--accent);
+}
+.lse code, .lse .mono {
+  font-family: var(--font-mono); font-size: 0.95em;
+}
+.lse a { color: var(--green-600); text-decoration: none; }
+.lse a:hover { color: var(--green-500); }
+
+/* Accessible focus ring */
+.lse :focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--ring);
+  border-radius: var(--r-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
