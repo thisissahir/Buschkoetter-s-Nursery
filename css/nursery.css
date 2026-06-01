@@ -3,6 +3,11 @@
    Ported from the design handoff.
    ============================================================================ */
 
+/* ---- header "Contact Us" CTA — leaf-green pop (header only) ---------------*/
+/* .lse scope so the white text beats the `.lse a` link-color rule. */
+.lse .btn-contact{background:#1F9D55;color:#fff;box-shadow:0 12px 26px -10px rgba(31,157,85,.55);}
+.lse .btn-contact:hover{background:#178A49;color:#fff;}
+
 /* ---- logo lockup ----------------------------------------------------------*/
 .nlogo{display:inline-flex;align-items:center;gap:12px;}
 .nlogo .mk{width:46px;height:46px;flex:none;transition:width var(--dur-base),height var(--dur-base);}
